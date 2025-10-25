@@ -58,7 +58,7 @@ def show_instructions():
 📢 **القناة:** @WWEEHHHH
 💬 **الدعم:** @DaveVanbayer
 
-🔗 **المستودع:** https://github.com/L-URD/Sahm_Bot
+🔗 **المستودع:** https://github.com/jsbsjv/Sahm_Bot.git
     """)
 
 if __name__ == "__main__":
