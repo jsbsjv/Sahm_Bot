@@ -1,0 +1,54 @@
+# ملفات البيئة والإعدادات
+.env
+config.ini
+config.json
+*.env
+
+# جلسات البوت
+*.session
+*.session-journal
+session/
+
+# ملفات بايثون المؤقتة
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ملفات النظام
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# السجلات
+*.log
+logs/
+debug.log
+
+# قاعدة البيانات
+*.db
+*.sqlite3
+database/
+
+# الملفات المنشأة
+downloads/
+temp/
+tmp/
+cache/
+
+# ملفات التثبيت
+build/
+dist/
+*.egg-info/
+
+# ملفات IDE
+.vscode/
+.idea/
+*.swp
+*.swo
