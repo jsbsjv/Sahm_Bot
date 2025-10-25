@@ -6,6 +6,7 @@
 🎯 سهم بوت - تشغيل سريع
 تم التطوير بواسطة: @L_URD
 القناة: @WWEEHHHH
+مجموعة الدعم: @DaveVanbayer
 """
 
 import os
@@ -16,17 +17,36 @@ def main():
     print("⚡ الإصدار: 1.0")
     print("👤 المطور: @L_URD")
     print("📢 القناة: @WWEEHHHH")
-    print("-" * 40)
+    print("💬 الدعم: @DaveVanbayer")
+    print("=" * 50)
     
-    # التحقق من وجود الملفات
+    # التحقق من وجود الملفات الأساسية
     required_files = ['main.py', 'config.py', 'requirements.txt']
+    missing_files = []
+    
     for file in required_files:
         if not os.path.exists(file):
-            print(f"❌ ملف {file} غير موجود!")
-            sys.exit(1)
+            missing_files.append(file)
+    
+    if missing_files:
+        print(f"❌ الملفات المفقودة: {', '.join(missing_files)}")
+        print("🔧 يرجى تحميل البوت من GitHub:")
+        print("git clone https://github.com/jsbsjv/Sahm_Bot.git")
+        return
+    
+    # التحقق من telethon
+    try:
+        import telethon
+        print("✅ telethon مثبت")
+    except ImportError:
+        print("❌ telethon غير مثبت")
+        print("📦 جاري التثبيت...")
+        os.system("pip install telethon --break-system-packages")
+        print("✅ تم التثبيت")
     
     # التشغيل
     try:
+        print("🚀 جاري تشغيل البوت...")
         os.system("python main.py")
     except KeyboardInterrupt:
         print("\n🛑 تم إيقاف البوت")
