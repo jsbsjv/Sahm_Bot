@@ -57,27 +57,3 @@ async def get_info(event):
         info_text += f"\n**🔗 اليوزر:** @{chat.username}"
     
     await event.reply(info_text)
-
-@client.on(events.NewMessage(pattern=r'\.توجيه (.+)$'))
-async def forward_message(event):
-    """توجيه رسالة - للمطور فقط"""
-    if event.sender_id != DEV_ID:
-        await event.reply("**❌ هذا الأمر للمطور فقط**")
-        return
-    
-    if not event.is_reply:
-        await event.reply("**❌ يرجى الرد على الرسالة**")
-        return
-    
-    try:
-        target_id = event.pattern_match.group(1)
-        if not target_id:
-            await event.reply("**❌ يرجى تحديد أيدي الدردشة**")
-            return
-        
-        replied = await event.get_reply_message()
-        await client.forward_messages(int(target_id), replied)
-        await event.reply("**✅ تم التوجيه بنجاح**")
-        
-    except Exception as e:
-        await event.reply(f"**❌ خطأ في التوجيه:** {e}")
